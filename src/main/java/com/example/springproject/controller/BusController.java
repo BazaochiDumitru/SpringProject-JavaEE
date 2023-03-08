@@ -31,4 +31,10 @@ public class BusController {
     public List<Bus> get() {
         return busService.getAll();
     }
+
+    // facem metoda de a primi o inregsitrare dupa id
+    @GetMapping("{id}")
+    public ResponseEntity<Bus> get(@PathVariable("id") long id) {
+        return new ResponseEntity<Bus>(busService.get(id), HttpStatus.OK);
+    }
 }

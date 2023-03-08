@@ -7,4 +7,5 @@ import java.util.List;
 public interface BusService {
     Bus saveBus(Bus bus);
     List<Bus> getAll();
+    Bus get(long id);
 }

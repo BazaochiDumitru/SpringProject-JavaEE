@@ -1,5 +1,6 @@
 package com.example.springproject.service.impl;
 
+import com.example.springproject.exception.ResourceNotFoundException;
 import com.example.springproject.model.Bus;
 import com.example.springproject.repository.BusRepository;
 import com.example.springproject.service.BusService;
@@ -25,5 +26,10 @@ public class BusServiceImpl implements BusService {
     @Override
     public List<Bus> getAll() {
         return busRepository.findAll();
+    }
+
+    @Override
+    public Bus get(long id) {
+        return busRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Bus", "id", id));
     }
 }
