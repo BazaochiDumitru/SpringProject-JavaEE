@@ -32,4 +32,16 @@ public class BusServiceImpl implements BusService {
     public Bus get(long id) {
         return busRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Bus", "id", id));
     }
+
+    @Override
+    public Bus update(Bus bus, long id) {
+        Bus existingBus = busRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Bus", "id", id));
+        existingBus.setNameBus(bus.getNameBus());
+        existingBus.setColorBus(bus.getColorBus());
+        existingBus.setMaxSpeed(bus.getMaxSpeed());
+        existingBus.setMaxPlaces(bus.getMaxPlaces());
+        existingBus.setNumberBus(bus.getNumberBus());
+        busRepository.save(existingBus);
+        return existingBus;
+    }
 }

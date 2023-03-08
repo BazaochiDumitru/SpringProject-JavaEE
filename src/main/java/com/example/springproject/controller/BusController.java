@@ -37,4 +37,10 @@ public class BusController {
     public ResponseEntity<Bus> get(@PathVariable("id") long id) {
         return new ResponseEntity<Bus>(busService.get(id), HttpStatus.OK);
     }
+
+    // facem metoda de a actualiza o inregistrare
+    @PutMapping("{id}")
+    public ResponseEntity<Bus> update(@PathVariable("id") long id, @RequestBody Bus bus) {
+        return new ResponseEntity<Bus>(busService.update(bus, id), HttpStatus.OK);
+    }
 }

@@ -8,4 +8,5 @@ public interface BusService {
     Bus saveBus(Bus bus);
     List<Bus> getAll();
     Bus get(long id);
+    Bus update(Bus bus, long id);
 }
