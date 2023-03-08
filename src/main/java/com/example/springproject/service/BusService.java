@@ -9,4 +9,5 @@ public interface BusService {
     List<Bus> getAll();
     Bus get(long id);
     Bus update(Bus bus, long id);
+    void delete(long id);
 }

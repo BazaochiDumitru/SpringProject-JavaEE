@@ -44,4 +44,10 @@ public class BusServiceImpl implements BusService {
         busRepository.save(existingBus);
         return existingBus;
     }
+
+    @Override
+    public void delete(long id) {
+        busRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Bus", "id", id));
+        busRepository.deleteById(id);
+    }
 }

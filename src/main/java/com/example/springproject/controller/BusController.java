@@ -43,4 +43,11 @@ public class BusController {
     public ResponseEntity<Bus> update(@PathVariable("id") long id, @RequestBody Bus bus) {
         return new ResponseEntity<Bus>(busService.update(bus, id), HttpStatus.OK);
     }
+
+    // facem metoda de a sterge o inregistrare
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> delete(@PathVariable("id") long id) {
+        busService.delete(id);
+        return new ResponseEntity<String>("Bus is deleted", HttpStatus.OK);
+    }
 }
