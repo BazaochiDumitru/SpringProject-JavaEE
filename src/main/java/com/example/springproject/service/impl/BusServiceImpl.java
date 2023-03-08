@@ -5,6 +5,8 @@ import com.example.springproject.repository.BusRepository;
 import com.example.springproject.service.BusService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BusServiceImpl implements BusService {
 
@@ -18,5 +20,10 @@ public class BusServiceImpl implements BusService {
     @Override
     public Bus saveBus(Bus bus) {
         return busRepository.save(bus);
+    }
+
+    @Override
+    public List<Bus> getAll() {
+        return busRepository.findAll();
     }
 }

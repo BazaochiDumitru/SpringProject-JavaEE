@@ -25,4 +25,10 @@ public class BusController {
     public ResponseEntity<Bus> create(@RequestBody Bus bus) {
         return new ResponseEntity<Bus>(busService.saveBus(bus), HttpStatus.CREATED);
     }
+
+    // facem metoda de a primi toate inregistrarile
+    @GetMapping
+    public List<Bus> get() {
+        return busService.getAll();
+    }
 }
