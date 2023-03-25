@@ -11,8 +11,10 @@ import java.util.List;
 @Service
 public class BusServiceImpl implements BusService {
 
+    // definim variabile
     private BusRepository busRepository;
 
+    // constructor
     public BusServiceImpl(BusRepository busRepository) {
         super();
         this.busRepository = busRepository;
